@@ -1,0 +1,93 @@
+.wedo {
+  padding: 10rem 0;
+
+  &-image {
+    object-fit: cover;
+  }
+
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    &-header {
+      @include flexBox(center);
+      padding: 1.5rem;
+      border: 1px solid $gray-dark-color;
+      cursor: pointer;
+      * {
+        pointer-events: none;
+      }
+    }
+    &-icon {
+      margin-right: 1.5rem;
+    }
+    &-title {
+      text-transform: uppercase;
+      font-weight: 500;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+      width: 100%;
+      max-width: 100%;
+      padding-right: 2rem;
+    }
+    &-arrow {
+      margin-left: auto;
+      font-size: 3rem;
+    }
+    &-bottom {
+      font-size: 1.5rem;
+      font-family: $secondary-font;
+      font-style: italic;
+      line-height: 1.6;
+      color: $text-color;
+      font-weight: 300;
+      overflow: hidden;
+      transition: height 0.2s linear;
+      height: 0;
+      &.is-active {
+        display: block;
+        height: auto;
+      }
+    }
+    &-content {
+      text-align: justify;
+      padding: 2rem;
+      border: 1px solid $gray-dark-color;
+      border-top: 0;
+      height: 14rem;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: $gray-light-color;
+        border-radius: 2rem;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $third-color;
+        border-radius: 2rem;
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    &-container {
+      @include flexBox(flex-start, space-between);
+    }
+    &-content,
+    &-image {
+      width: calc(50% - 1.5rem);
+    }
+  }
+
+  @media only screen and (max-width: 46.1875em) {
+    padding: 5rem 0;
+    &-image {
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+  }
+}

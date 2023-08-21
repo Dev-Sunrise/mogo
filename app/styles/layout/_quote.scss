@@ -1,0 +1,105 @@
+.quote {
+  padding: 6.5rem 0;
+  @include bg($gray-color);
+  &-arrow {
+    color: $gray-dark-color;
+    cursor: pointer;
+    font-size: 4rem;
+    padding: 1rem 2rem;
+  }
+  &-item {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+    @include flexBox(center);
+    outline: none;
+  }
+  &-image {
+    @include size(22rem);
+    object-fit: cover;
+    border-radius: 100rem;
+    flex-shrink: 0;
+    margin-right: 2.5rem;
+  }
+  &-icon {
+    @include size(15rem);
+    @include flexBox(center, center);
+    border: 3px solid $third-color;
+    flex-shrink: 0;
+    margin-right: 6rem;
+  }
+  &-desc {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: $secondary-font;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-word;
+    width: 100%;
+    max-width: 100%;
+  }
+  &-author {
+    font-family: $third-font;
+    font-size: 2.4rem;
+    position: relative;
+    padding-left: 7rem;
+    &::before {
+      content: "";
+      @include absoluteCenter(top);
+      @include size(6rem, 4px);
+      @include bg($primary-color);
+      left: 0;
+    }
+  }
+  .slick-initialized .slick-slide {
+    display: flex;
+  }
+  .slick-arrow {
+    background-color: transparent;
+    border: 0;
+    color: $gray-dark-color;
+    cursor: pointer;
+    font-size: 4rem;
+    padding: 1rem 2rem;
+    @include absoluteCenter("top");
+    z-index: 10;
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+  @media only screen and (max-width: 46.1875em) {
+    &-icon {
+      @include size(10rem);
+      margin-right: 0;
+      img {
+        max-width: 50%;
+      }
+    }
+    &-arrow {
+      display: none;
+    }
+    &-item {
+      padding: 0;
+      flex-direction: column;
+    }
+    &-info {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    &-desc {
+      display: block;
+      font-size: 1.6rem;
+    }
+    &-author {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+mixin menuLink(title, href ="#!")
+	li.header-menu-item 
+		a.header-menu-link(href = href)= title 
+
+mixin headerBottomItem(number, title, isActive)
+	.header-bottom-item(class= isActive)
+		span.header-bottom-number= number
+		span.header-bottom-text=title
+
+mixin blockBox(caption, title, desc)
+	.block-box
+		h3.block-box-caption= caption 
+		h2.block-box-heading= title 
+		if desc 
+			p.block-box-desc= desc
+
+mixin aboutItem(src, title, classIcon, alt= "")
+	.about-item 
+		img.about-image(src= src, alt= alt)
+		.about-content 
+			i.about-icon(class= classIcon)
+			span.about-title= title
+
+mixin servicesItem(src, title, desc)
+	.services-item 
+		img.services-item-icon(src= src)
+		.services-item-info 
+			h3.services-item-title= title
+			p.services-item-desc= desc
+
+mixin wedoItem(src, title, desc, active= "")
+	.wedo-item
+		.wedo-item-header 
+			img.wedo-item-icon(src= src)
+			h3.wedo-item-title= title
+			i.fal.fa-angle-down.wedo-item-arrow.icon
+		.wedo-item-bottom(class= active)
+			.wedo-item-content= desc
+	
+mixin teamSocial(facebook = "#!", twitter = "#!", pinterest = "#!", instagram = "#!")
+	ul.team-social 
+		li.team-social-item 
+			a.team-social-link(href= facebook)
+				i.fab.fa-facebook-f
+		li.team-social-item 
+			a.team-social-link(href= twitter)
+				i.fab.fa-twitter
+		li.team-social-item 
+			a.team-social-link(href= pinterest)
+				i.fab.fa-pinterest
+		li.team-social-item 
+			a.team-social-link(href= instagram)
+				i.fab.fa-instagram
+
+mixin teamItem(src, name, position)
+	.team-item
+		.team-main
+			img.team-image(src= src)
+			.team-content 
+				if block 
+					block 
+		.team-info
+			h3.team-name= name
+			span.team-position= position 
+	
+
+mixin workItem(src, icon, full= "", title= "creatively designed", desc= "Lorem ipsum dolor sit")
+	.work-item(class= full)
+		img.work-image(src= src)
+		.work-content
+			img.work-icon(src= icon)
+			h3.work-title= title
+			span.word-desc.text.text--light.text-white=desc
+
+mixin peopleItem(src, name, desc= "",job= "Graphic Design")
+	li.people-item
+		img.people-img(src= src)
+		.people-info 
+			h3.people-name= name
+			span.people-job.text.text--light= job
+			p.people-desc.text= desc
+
+mixin storyItem(src, dateNumber, dateText, title, desc, metaNumber, metaComment)
+	li.story-item
+		.story-media 
+			img.story-image(src= src)
+			.story-date 
+				span.story-date-number= dateNumber
+				span.story-date-text.text.text--light= dateText 
+		h3.story-title= title
+		.story-desc.text
+			p.story-desc-dinner= desc
+		.story-meta 
+			.story-meta-item 
+				i.fa.fa-eye.story-meta-icon
+				span.story-meta-number.text= metaNumber
+			.story-meta-item 
+				i.fa.fa-comment.story-meta-icon
+				span.story-meta-number.text= metaComment
+
+mixin quoteItem(src = "./images/img-quote.png", type = false, author = "Jon Doe", desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, natus aperiam, dolores dolore voluptas autem, non repellat nulla vitae cum excepturi magni aliquid ipsa odio odit ad ratione iusto numquam!")
+	.quote-item 
+		if type == false
+			.quote-icon 
+					img.quote-img(src= src)
+		else
+				img.quote-image(src= src)
+		.quote-info
+				q.quote-desc= desc
+				span.quote-author= author

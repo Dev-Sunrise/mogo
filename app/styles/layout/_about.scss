@@ -1,0 +1,43 @@
+.about {
+  padding-top: 9.3rem;
+  padding-bottom: 11rem;
+  background-color: #fff;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+  &-content {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+  }
+  &-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  &-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media only screen and (max-width: 46.1875em) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &-list {
+      @include slider;
+    }
+  }
+}
+@include hoverEffect(".about-item", ".about-content");

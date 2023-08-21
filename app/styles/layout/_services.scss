@@ -1,0 +1,63 @@
+.services {
+  padding: 11rem 0 12rem;
+  @include bg(#fff);
+  &-list {
+    @include flexBox(stretch, space-between);
+    margin-top: 6.5rem;
+    &:first-child {
+      border-bottom: 1px solid $gray-dark-color;
+      margin-bottom: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+  &-item {
+    width: calc(33.33% - 2.7rem);
+    margin-left: 4rem;
+    @include flexBox(flex-start);
+    &-icon {
+      width: 3.5rem;
+      color: $third-color;
+      margin: 0 3rem;
+    }
+    &-info {
+      width: calc(100% - 9.5rem);
+      height: 100%;
+      @include flexBox(flex-start, space-between, column);
+    }
+    &-title {
+      font-weight: 500;
+      color: $title-color;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      text-transform: uppercase;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+      width: 100%;
+      max-width: 100%;
+    }
+    &-desc {
+      color: $text-color;
+      line-height: 1.6;
+      font-weight: 300;
+      font-family: $secondary-font;
+    }
+  }
+
+  @media screen and (max-width: 1023.98px) {
+    padding: 5rem 0;
+    &-list {
+      display: block;
+    }
+    &-item {
+      width: 100%;
+      margin-left: 0;
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.work {
+  padding-top: 10rem;
+  &-list {
+    @include flexBox;
+    height: 78rem;
+  }
+  &-column {
+    width: 25%;
+  }
+  &-content {
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  &-icon {
+    margin-bottom: 1rem;
+  }
+  &-title {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    width: 100%;
+    max-width: 100%;
+  }
+  &-image {
+    @include size(100%);
+    object-fit: cover;
+  }
+  &-item {
+    height: 50%;
+  }
+  &-item--full {
+    height: 100%;
+  }
+  @media only screen and (max-width: 1600px) {
+    &-list {
+      height: 60rem;
+    }
+  }
+  @media only screen and (max-width: 1279px) {
+    &-list {
+      flex-wrap: wrap;
+      height: auto;
+    }
+    &-column {
+      width: 50%;
+    }
+    &-item {
+      height: 42rem;
+    }
+    &-item--full {
+      height: 84rem;
+    }
+  }
+  @media only screen and (max-width: 46.1875em) {
+    padding-top: 5rem;
+    &-column {
+      width: 100%;
+    }
+    &-item,
+    &-item--full {
+      height: auto;
+    }
+  }
+}
+@include hoverEffect(".work-item ", ".work-content", "false");
